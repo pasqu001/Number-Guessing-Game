@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Number Guess</title>
+    </head>
+    <body>
+        <p id="prompt">I'm thinking of a number between 1-10. Can you guess it?</p>
+        <input id="guess" type="text" value="" />
+        <input type="button" value="Guess" onclick="numberGuess();" />
+
+        <script>
+        function numberGuess() {
+            var randomNumber = Math.floor((Math.random()*10) +1);
+            var yourGuess = document.getElementById("guess");
+
+            if(yourGuess.value == randomNumber) {
+                document.getElementById("prompt").innerHTML ="That is correct!";
+            } else {
+                document.getElementById("prompt").innerHTML = "Sorry, the number was " +  randomNumber;
+            }
+        }
+        </script>
+    </body>
+</html>
